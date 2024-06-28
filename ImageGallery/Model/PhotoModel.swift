@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+struct PhotoModel {
+    let id: String
+    let author: String
+    let url: String
+    let downloadUrl: String
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case author
+        case url
+        case downloadUrl = "download_url"
+    }
+}

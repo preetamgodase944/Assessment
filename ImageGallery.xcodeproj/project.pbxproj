@@ -14,6 +14,9 @@
 		D751F7FC2C2F13670002E2FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D751F7FB2C2F13670002E2FB /* Assets.xcassets */; };
 		D751F7FF2C2F13670002E2FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D751F7FD2C2F13670002E2FB /* LaunchScreen.storyboard */; };
 		D751F80A2C2F2C710002E2FB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D751F8092C2F2C710002E2FB /* Constants.swift */; };
+		D751F8102C2F31F30002E2FB /* ListRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D751F80E2C2F31F30002E2FB /* ListRowCell.swift */; };
+		D751F8112C2F31F30002E2FB /* ListRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D751F80F2C2F31F30002E2FB /* ListRowCell.xib */; };
+		D751F8142C2F352A0002E2FB /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D751F8132C2F352A0002E2FB /* PhotoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		D751F7FE2C2F13670002E2FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D751F8002C2F13670002E2FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D751F8092C2F2C710002E2FB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D751F80E2C2F31F30002E2FB /* ListRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowCell.swift; sourceTree = "<group>"; };
+		D751F80F2C2F31F30002E2FB /* ListRowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListRowCell.xib; sourceTree = "<group>"; };
+		D751F8132C2F352A0002E2FB /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		D751F7F12C2F13650002E2FB /* ImageGallery */ = {
 			isa = PBXGroup;
 			children = (
+				D751F8122C2F350C0002E2FB /* Model */,
 				D751F8082C2F2C540002E2FB /* Helper */,
 				D751F8072C2F2C480002E2FB /* ViewModel */,
 				D751F80D2C2F31030002E2FB /* View */,
@@ -98,8 +105,18 @@
 		D751F80D2C2F31030002E2FB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D751F80E2C2F31F30002E2FB /* ListRowCell.swift */,
+				D751F80F2C2F31F30002E2FB /* ListRowCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D751F8122C2F350C0002E2FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D751F8132C2F352A0002E2FB /* PhotoModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +177,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D751F8112C2F31F30002E2FB /* ListRowCell.xib in Resources */,
 				D751F7FF2C2F13670002E2FB /* LaunchScreen.storyboard in Resources */,
 				D751F7FC2C2F13670002E2FB /* Assets.xcassets in Resources */,
 				D751F7FA2C2F13650002E2FB /* Main.storyboard in Resources */,
@@ -173,10 +191,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D751F8142C2F352A0002E2FB /* PhotoModel.swift in Sources */,
 				D751F7F72C2F13650002E2FB /* ListingVC.swift in Sources */,
 				D751F7F32C2F13650002E2FB /* AppDelegate.swift in Sources */,
 				D751F80A2C2F2C710002E2FB /* Constants.swift in Sources */,
 				D751F7F52C2F13650002E2FB /* SceneDelegate.swift in Sources */,
+				D751F8102C2F31F30002E2FB /* ListRowCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
