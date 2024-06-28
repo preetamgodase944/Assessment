@@ -62,7 +62,7 @@ extension SceneDelegate {
     
     func rootToViewController() {
         let storyBoard = UIStoryboard(name: StoryBoard.Main.rawValue, bundle: nil)
-        let imageList = storyBoard.instantiateViewController(withIdentifier: ScreenName.ImageListVC.rawValue)
-        window?.rootViewController = imageList
+        let listingVC = storyBoard.instantiateViewController(withIdentifier: ScreenName.ListingVC.rawValue)
+        window?.rootViewController = listingVC
     }
 }

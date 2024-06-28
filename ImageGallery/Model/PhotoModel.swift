@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PhotoModel {
+struct PhotoModel: Codable {
     let id: String
     let author: String
     let url: String
