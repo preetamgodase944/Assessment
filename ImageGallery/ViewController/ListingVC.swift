@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImageListVC: UIViewController {
+class ListingVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

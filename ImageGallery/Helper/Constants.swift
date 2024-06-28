@@ -9,7 +9,7 @@ import Foundation
 
 enum ScreenName: String {
     case LaunchScreen
-    case ImageListVC
+    case ListingVC
 }
 
 enum StoryBoard: String {
