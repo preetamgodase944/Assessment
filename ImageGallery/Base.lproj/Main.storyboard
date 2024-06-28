@@ -16,18 +16,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCw-1L-spE">
-                                <rect key="frame" x="164.66666666666666" y="409.66666666666669" width="64" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pq1-nk-cAi">
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <items>
+                                    <navigationItem id="4PM-IG-q9T">
+                                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="R6N-9d-JW5"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GiF-7s-hjz">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="YCw-1L-spE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2oL-1q-EAs"/>
-                            <constraint firstItem="YCw-1L-spE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g7z-It-fTu"/>
+                            <constraint firstItem="GiF-7s-hjz" firstAttribute="top" secondItem="Pq1-nk-cAi" secondAttribute="bottom" id="DzF-Hh-L9m"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pq1-nk-cAi" secondAttribute="trailing" id="KLj-Gf-jl7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GiF-7s-hjz" secondAttribute="trailing" id="OLe-Zq-Bb7"/>
+                            <constraint firstItem="Pq1-nk-cAi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cbI-vh-r68"/>
+                            <constraint firstItem="GiF-7s-hjz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fcq-89-Bqd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GiF-7s-hjz" secondAttribute="bottom" id="gYh-DS-HHQ"/>
+                            <constraint firstItem="Pq1-nk-cAi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zAt-mx-x9E"/>
                         </constraints>
                     </view>
                 </viewController>
