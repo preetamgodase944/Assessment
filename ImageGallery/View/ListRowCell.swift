@@ -9,11 +9,23 @@ import UIKit
 
 class ListRowCell: UITableViewCell {
     
-    @IBOutlet weak var titleLabel: UILabel!
+    static let reusedentifier = "ListRowCell"
+    
+    @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var imageContent: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    override func prepareForReuse() {
+        authorLabel.text = ""
+        imageContent.image = nil
+        descriptionLabel.text = nil
+    }
+    
     func configureCell(for model: PhotoModel) {
-        
+        authorLabel.text = model.author
+        descriptionLabel.text = model.url 
+        NetworkManager.shared.getImage(for: model, completion: { [ weak self ] image in
+            self?.imageContent.image = image
+        })
     }
 }
