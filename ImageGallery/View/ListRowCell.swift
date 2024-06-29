@@ -38,6 +38,7 @@ class ListRowCell: UITableViewCell {
     @IBAction func checkBoxToggled(_ sender: CheckBoxButton) {
         isRowEnabled.toggle()
         delegate?.didToggleRowSelection(isRowEnabled, at: tag)
+        updateRowState()
     }
     
     func configureCell(for model: PhotoModel, isEnabled: Bool, delegate: RowSelection) {
@@ -45,8 +46,15 @@ class ListRowCell: UITableViewCell {
         isRowEnabled = isEnabled
         authorLabel.text = model.author
         descriptionLabel.text = model.url 
+        updateRowState()
         NetworkManager.shared.getImage(for: model, completion: { [ weak self ] image in
             self?.imageContent.image = image
         })
+    }
+}
+
+private extension ListRowCell {
+    func updateRowState() {
+        alpha = isRowEnabled ? 1 : 0.5
     }
 }

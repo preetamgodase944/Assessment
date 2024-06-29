@@ -75,8 +75,8 @@ extension ListingViewModel: ListingOutputViewModel {
         if let rowState = rowStateData[model.id] {
             return (model, rowState)
         } else {
-            rowStateData[model.id] = false
-            return (model, false)
+            rowStateData[model.id] = true
+            return (model, true)
         }
     }
 }
