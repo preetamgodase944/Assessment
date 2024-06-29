@@ -60,10 +60,19 @@
                         <constraint firstAttribute="trailing" secondItem="Ohj-HI-fiS" secondAttribute="trailing" constant="16" id="wnw-tX-GKA"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUh-e8-mLI">
+                    <rect key="frame" x="143" y="465" width="67" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                    <connections>
+                        <action selector="closeButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="fO3-57-YYW"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="HUh-e8-mLI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9bO-1b-9eL"/>
                 <constraint firstItem="CK3-oq-pgh" firstAttribute="top" secondItem="mss-Yp-yCm" secondAttribute="bottom" id="KLO-GO-OTv"/>
                 <constraint firstItem="iYm-ZZ-nLU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="O8z-Q2-86h"/>
                 <constraint firstItem="mss-Yp-yCm" firstAttribute="top" secondItem="iYm-ZZ-nLU" secondAttribute="bottom" constant="8" id="WXr-mc-v0a"/>
@@ -71,6 +80,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="CK3-oq-pgh" secondAttribute="bottom" id="fCR-2D-pUW"/>
                 <constraint firstAttribute="trailing" secondItem="mss-Yp-yCm" secondAttribute="trailing" id="htw-bv-QUG"/>
                 <constraint firstItem="iYm-ZZ-nLU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="l3f-up-PNv"/>
+                <constraint firstAttribute="bottom" secondItem="HUh-e8-mLI" secondAttribute="bottom" id="lSL-JF-85X"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CK3-oq-pgh" secondAttribute="trailing" id="mRo-kK-G5J"/>
                 <constraint firstItem="mss-Yp-yCm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pag-Kd-y1x"/>
             </constraints>

@@ -28,4 +28,7 @@ class DialogView: UIView {
         })
     }
     
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        delegate?.didTapCloseButton()
+    }
 }

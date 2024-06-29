@@ -72,6 +72,11 @@ private extension ListingVC {
     func configureUI() {
         guard let dialogView = DialogView().loadView() as? DialogView else { return }
         dialogView.layer.cornerRadius = 12
+        dialogView.layer.shadowColor = UIColor.black.cgColor
+        dialogView.layer.shadowOpacity = 0.4
+        dialogView.layer.shadowRadius = 4
+        dialogView.delegate = self
+        
         view.addSubview(dialogView)
         
         NSLayoutConstraint.activate([
@@ -186,5 +191,13 @@ extension ListingVC: UITableViewDelegate {
 extension ListingVC: RowSelection {
     func didToggleRowSelection(_ newValue: Bool, at index: Int) {
         viewModel.inputs.updateState(forRow: index, to: newValue)
+    }
+}
+
+extension ListingVC: DialogDelegate {
+    func didTapCloseButton() {
+        DispatchQueue.main.async { [weak self] in
+            self?.hideDialogView()
+        }
     }
 }
