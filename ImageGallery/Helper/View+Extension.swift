@@ -37,3 +37,14 @@ extension UITableView {
         self.separatorStyle = .singleLine
     }
 }
+
+extension UIView {
+    func loadView() -> UIView? {
+        let bundleName = Bundle(for: type(of: self))
+        let nibName = String(describing: type(of: self))
+        let nib = UINib(nibName: nibName, bundle: bundleName)
+        let view = nib.instantiate(withOwner: nil).first as? UIView
+        view?.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }
+}

@@ -60,8 +60,8 @@ private extension NetworkManager {
             completion(nil)
             return
         }
-        let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-            guard let self = self, let data = data, error == nil else { return }
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else { return }
             if let image = UIImage(data: data) {
                 DispatchQueue.main.async {
                     cache.setObject(image, forKey: urlString as NSString)

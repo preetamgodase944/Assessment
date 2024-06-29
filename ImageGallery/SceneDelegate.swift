@@ -51,8 +51,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension SceneDelegate {
     func displaySplashScreen() {
-        let storyBoard = UIStoryboard(name: StoryBoard.LaunchScreen.rawValue, bundle: nil)
-        let lauchScreen = storyBoard.instantiateViewController(withIdentifier: ScreenName.LaunchScreen.rawValue)
+        let storyBoard = UIStoryboard(name: Constants.StoryBoard.LaunchScreen.rawValue, bundle: nil)
+        let lauchScreen = storyBoard.instantiateViewController(withIdentifier: Constants.ScreenName.LaunchScreen.rawValue)
         window?.rootViewController = lauchScreen
         window?.makeKeyAndVisible()
         DispatchQueue.main.asyncAfter(deadline: .now()+0.5) { [weak self] in
@@ -61,8 +61,8 @@ extension SceneDelegate {
     }
     
     func rootToViewController() {
-        let storyBoard = UIStoryboard(name: StoryBoard.Main.rawValue, bundle: nil)
-        let listingVC = storyBoard.instantiateViewController(withIdentifier: ScreenName.ListingVC.rawValue)
+        let storyBoard = UIStoryboard(name: Constants.StoryBoard.Main.rawValue, bundle: nil)
+        let listingVC = storyBoard.instantiateViewController(withIdentifier: Constants.ScreenName.ListingVC.rawValue)
         window?.rootViewController = listingVC
     }
 }

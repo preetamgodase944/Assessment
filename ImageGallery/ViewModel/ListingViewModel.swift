@@ -66,6 +66,4 @@ extension ListingViewModel: ListingOutputViewModel {
             return (model, false)
         }
     }
-    
-    
 }

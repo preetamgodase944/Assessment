@@ -18,9 +18,10 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pq1-nk-cAi">
                                 <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <color key="barTintColor" systemColor="systemBackgroundColor"/>
                                 <items>
                                     <navigationItem id="4PM-IG-q9T">
-                                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="R6N-9d-JW5">
+                                        <barButtonItem key="leftBarButtonItem" image="arrow.clockwise" catalog="system" id="R6N-9d-JW5">
                                             <connections>
                                                 <action selector="refreshButtonTapped:" destination="BYZ-38-t0r" id="TkH-ck-h6q"/>
                                             </connections>
@@ -36,20 +37,29 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Ghp-AU-efN"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0uL-S4-kFd">
+                                <rect key="frame" x="16" y="59" width="361" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="0uL-S4-kFd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="6Px-D9-Qg0"/>
                             <constraint firstItem="GiF-7s-hjz" firstAttribute="top" secondItem="Pq1-nk-cAi" secondAttribute="bottom" id="DzF-Hh-L9m"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pq1-nk-cAi" secondAttribute="trailing" id="KLj-Gf-jl7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0uL-S4-kFd" secondAttribute="trailing" id="NMO-2l-CkH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GiF-7s-hjz" secondAttribute="trailing" id="OLe-Zq-Bb7"/>
                             <constraint firstItem="Pq1-nk-cAi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cbI-vh-r68"/>
                             <constraint firstItem="GiF-7s-hjz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fcq-89-Bqd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GiF-7s-hjz" secondAttribute="bottom" id="gYh-DS-HHQ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="0uL-S4-kFd" secondAttribute="bottom" id="hfX-o1-dTG"/>
+                            <constraint firstItem="0uL-S4-kFd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="rlm-UZ-qss"/>
                             <constraint firstItem="Pq1-nk-cAi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zAt-mx-x9E"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="overlayView" destination="0uL-S4-kFd" id="p3E-0y-F2p"/>
                         <outlet property="tableView" destination="GiF-7s-hjz" id="abu-w1-QLB"/>
                     </connections>
                 </viewController>
@@ -59,6 +69,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
