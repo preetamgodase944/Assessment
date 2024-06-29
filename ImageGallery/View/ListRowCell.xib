@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eL-yo-Wk2">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eL-yo-Wk2" customClass="CheckBoxButton" customModule="ImageGallery" customModuleProvider="target">
                         <rect key="frame" x="280" y="72.666666666666671" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24" id="FTK-ns-4vT"/>
@@ -25,6 +25,9 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="checkmark.square.fill" catalog="system"/>
+                        <connections>
+                            <action selector="checkBoxToggled:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="FVt-25-bmJ"/>
+                        </connections>
                     </button>
                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mBA-Rw-Kbd">
                         <rect key="frame" x="16" y="8" width="256" height="153"/>
@@ -79,6 +82,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="authorLabel" destination="a9D-iH-7R3" id="A5B-FS-6Kz"/>
+                <outlet property="checkBox" destination="2eL-yo-Wk2" id="SGR-3n-9G4"/>
                 <outlet property="descriptionLabel" destination="2Bn-ic-jgF" id="l0r-O0-Shj"/>
                 <outlet property="imageContent" destination="Ksa-Eu-sOi" id="XPC-kQ-ab0"/>
             </connections>

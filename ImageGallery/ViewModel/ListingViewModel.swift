@@ -9,13 +9,14 @@ import Foundation
 
 protocol ListingIntputViewModel {
     func fetchImages()
+    func updateState(forRow atIndex: Int, to newValue: Bool)
 }
 
 protocol ListingOutputViewModel {
     var reloadTableView : () -> Void { get set }
     func isListEmpty() -> Bool
     func getNumberOfImages() -> Int
-    func getPhotoModel(for index: Int) -> PhotoModel?
+    func getPhotoModelWithState(for index: Int) -> (PhotoModel, Bool)?
 }
 
 protocol ListingViewModelType {
@@ -28,6 +29,7 @@ class ListingViewModel: ListingViewModelType {
     var outputs: ListingOutputViewModel { return self }
     
     var photosData: [PhotoModel]?
+    var rowStateData: [String: Bool] = [:]
     
     var reloadTableView: () -> Void = { }
 }
@@ -38,6 +40,11 @@ extension ListingViewModel: ListingIntputViewModel {
             self?.photosData = photosModel
             self?.reloadTableView()
         }
+    }
+    
+    func updateState(forRow atIndex: Int, to newValue: Bool) {
+        guard let identifier = photosData?[atIndex].id else { return }
+        rowStateData[identifier] = newValue
     }
 }
 
@@ -50,8 +57,14 @@ extension ListingViewModel: ListingOutputViewModel {
         photosData?.count ?? 0
     }
     
-    func getPhotoModel(for index: Int) -> PhotoModel? {
-        photosData?[index]
+    func getPhotoModelWithState(for index: Int) -> (PhotoModel, Bool)? {
+        guard let model = photosData?[index] else { return nil }
+        if let rowState = rowStateData[model.id] {
+            return (model, rowState)
+        } else {
+            rowStateData[model.id] = false
+            return (model, false)
+        }
     }
     
     

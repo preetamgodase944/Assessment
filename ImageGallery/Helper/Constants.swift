@@ -16,3 +16,8 @@ enum StoryBoard: String {
     case LaunchScreen
     case Main
 }
+
+enum ButtonImageName: String {
+    case selected = "checkmark.square.fill"
+    case unselected = "square"
+}

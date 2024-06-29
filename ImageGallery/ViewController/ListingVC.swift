@@ -63,14 +63,21 @@ extension ListingVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ListRowCell.reusedentifier) as? ListRowCell,
-              let model = viewModel.outputs.getPhotoModel(for: indexPath.row) else {
+              let (model, isRowEnabled) = viewModel.outputs.getPhotoModelWithState(for: indexPath.row) else {
                   return UITableViewCell()
               }
-        cell.configureCell(for: model)
+        cell.tag = indexPath.row
+        cell.configureCell(for: model, isEnabled: isRowEnabled, delegate: self)
         return cell
     }
 }
 
 extension ListingVC: UITableViewDelegate {
     
+}
+
+extension ListingVC: RowSelection {
+    func didToggleRowSelection(_ newValue: Bool, at index: Int) {
+        viewModel.inputs.updateState(forRow: index, to: newValue)
+    }
 }
