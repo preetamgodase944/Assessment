@@ -31,7 +31,7 @@ class ListingVC: UIViewController {
 
     @IBAction func refreshButtonTapped(_ sender: Any) {
         activityIndicator.startAnimating()
-        viewModel.outputs.reloadTableView()
+        viewModel.inputs.fetchImages()
     }
     
 }
