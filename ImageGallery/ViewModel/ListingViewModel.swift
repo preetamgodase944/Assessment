@@ -38,10 +38,20 @@ class ListingViewModel: ListingViewModelType {
 
 extension ListingViewModel: ListingIntputViewModel {
     func fetchImages() {
-        NetworkManager.shared.fetchPhotoListData { [weak self] photosModel in
-            self?.photosData = photosModel
-            self?.reloadTableView()
-            self?.hideLoadingIndicator()
+        let pageNumber = getPageNumber()
+        NetworkManager.shared.fetchPhotoListData(for: pageNumber) { [weak self] photosModel in
+            guard let self else { return }
+            
+            if self.photosData == nil {
+                self.photosData = []
+            }
+            
+            if let photosModel = photosModel {
+                self.photosData?.append(contentsOf: photosModel)
+            }
+            
+            self.reloadTableView()
+            self.hideLoadingIndicator()
         }
     }
     
@@ -68,5 +78,13 @@ extension ListingViewModel: ListingOutputViewModel {
             rowStateData[model.id] = false
             return (model, false)
         }
+    }
+}
+
+private extension ListingViewModel {
+    func getPageNumber() -> Int {
+        guard let numberOfItems = photosData?.count else { return 1 }
+        let pageNumber = (numberOfItems + 9) / 10
+        return max(pageNumber, 1)
     }
 }

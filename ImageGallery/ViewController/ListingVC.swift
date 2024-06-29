@@ -171,6 +171,16 @@ extension ListingVC: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         didSelectRow(at: indexPath.row)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let height = scrollView.frame.size.height
+        let contentYOffset = scrollView.contentOffset.y
+        let distanceFromBottom = scrollView.contentSize.height - contentYOffset
+
+        if distanceFromBottom < height {
+            viewModel.inputs.fetchImages()
+        }
+    }
 }
 
 extension ListingVC: RowSelection {
