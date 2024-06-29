@@ -13,6 +13,7 @@ protocol ListingIntputViewModel {
 }
 
 protocol ListingOutputViewModel {
+    var hideLoadingIndicator: () -> Void { get set }
     var reloadTableView : () -> Void { get set }
     func isListEmpty() -> Bool
     func getNumberOfImages() -> Int
@@ -32,6 +33,7 @@ class ListingViewModel: ListingViewModelType {
     var rowStateData: [String: Bool] = [:]
     
     var reloadTableView: () -> Void = { }
+    var hideLoadingIndicator: () -> Void = { }
 }
 
 extension ListingViewModel: ListingIntputViewModel {
@@ -39,6 +41,7 @@ extension ListingViewModel: ListingIntputViewModel {
         NetworkManager.shared.fetchPhotoListData { [weak self] photosModel in
             self?.photosData = photosModel
             self?.reloadTableView()
+            self?.hideLoadingIndicator()
         }
     }
     

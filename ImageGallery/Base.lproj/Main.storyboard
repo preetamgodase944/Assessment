@@ -41,12 +41,17 @@
                                 <rect key="frame" x="16" y="59" width="361" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="EuG-fw-wUS">
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="EuG-fw-wUS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5KX-fD-qdW"/>
                             <constraint firstItem="0uL-S4-kFd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="6Px-D9-Qg0"/>
                             <constraint firstItem="GiF-7s-hjz" firstAttribute="top" secondItem="Pq1-nk-cAi" secondAttribute="bottom" id="DzF-Hh-L9m"/>
+                            <constraint firstItem="EuG-fw-wUS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jcg-Il-aTW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pq1-nk-cAi" secondAttribute="trailing" id="KLj-Gf-jl7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0uL-S4-kFd" secondAttribute="trailing" id="NMO-2l-CkH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GiF-7s-hjz" secondAttribute="trailing" id="OLe-Zq-Bb7"/>
@@ -59,6 +64,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="EuG-fw-wUS" id="J9n-1Y-Voz"/>
                         <outlet property="overlayView" destination="0uL-S4-kFd" id="p3E-0y-F2p"/>
                         <outlet property="tableView" destination="GiF-7s-hjz" id="abu-w1-QLB"/>
                     </connections>

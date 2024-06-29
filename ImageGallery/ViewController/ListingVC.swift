@@ -12,6 +12,7 @@ class ListingVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var overlayView: UIView!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     weak var dialogView: DialogView?
     
     var viewModel: ListingViewModel = ListingViewModel()
@@ -21,8 +22,15 @@ class ListingVC: UIViewController {
         
         setUpOnLoad()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        setUpOnViewAppear()
+    }
 
     @IBAction func refreshButtonTapped(_ sender: Any) {
+        activityIndicator.startAnimating()
         viewModel.outputs.reloadTableView()
     }
     
@@ -37,11 +45,22 @@ private extension ListingVC {
         registerTableViewCell()
     }
     
+    func setUpOnViewAppear() {
+        activityIndicator.startAnimating()
+    }
+    
     func bindUI() {
         viewModel.reloadTableView = {
             DispatchQueue.main.async { [weak self] in
                 guard let self else { return }
                 self.updateTableView()
+            }
+        }
+        
+        viewModel.hideLoadingIndicator = {
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                self.activityIndicator.stopAnimating()
             }
         }
     }
