@@ -19,6 +19,7 @@
 		D751F8142C2F352A0002E2FB /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D751F8132C2F352A0002E2FB /* PhotoModel.swift */; };
 		D751F8172C2F37210002E2FB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D751F8162C2F37210002E2FB /* NetworkManager.swift */; };
 		D751F8192C2F3F670002E2FB /* ListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D751F8182C2F3F670002E2FB /* ListingViewModel.swift */; };
+		D751F81B2C2FBFCB0002E2FB /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D751F81A2C2FBFCB0002E2FB /* View+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		D751F8132C2F352A0002E2FB /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		D751F8162C2F37210002E2FB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D751F8182C2F3F670002E2FB /* ListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewModel.swift; sourceTree = "<group>"; };
+		D751F81A2C2FBFCB0002E2FB /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				D751F8092C2F2C710002E2FB /* Constants.swift */,
+				D751F81A2C2FBFCB0002E2FB /* View+Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				D751F80A2C2F2C710002E2FB /* Constants.swift in Sources */,
 				D751F7F52C2F13650002E2FB /* SceneDelegate.swift in Sources */,
 				D751F8102C2F31F30002E2FB /* ListRowCell.swift in Sources */,
+				D751F81B2C2FBFCB0002E2FB /* View+Extension.swift in Sources */,
 				D751F8192C2F3F670002E2FB /* ListingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

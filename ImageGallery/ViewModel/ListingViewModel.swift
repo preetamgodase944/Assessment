@@ -13,6 +13,7 @@ protocol ListingIntputViewModel {
 
 protocol ListingOutputViewModel {
     var reloadTableView : () -> Void { get set }
+    func isListEmpty() -> Bool
     func getNumberOfImages() -> Int
     func getPhotoModel(for index: Int) -> PhotoModel?
 }
@@ -41,6 +42,10 @@ extension ListingViewModel: ListingIntputViewModel {
 }
 
 extension ListingViewModel: ListingOutputViewModel {
+    func isListEmpty() -> Bool {
+        photosData?.isEmpty ?? true
+    }
+    
     func getNumberOfImages() -> Int {
         photosData?.count ?? 0
     }

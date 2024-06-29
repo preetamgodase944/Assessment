@@ -35,13 +35,23 @@ private extension ListingVC {
     func bindUI() {
         viewModel.reloadTableView = {
             DispatchQueue.main.async { [weak self] in
-                self?.tableView.reloadData()
+                guard let self else { return }
+                self.updateTableView()
             }
         }
     }
     
     func registerTableViewCell() {
         tableView.register(UINib(nibName: ListRowCell.reusedentifier, bundle: nil), forCellReuseIdentifier: ListRowCell.reusedentifier)
+    }
+    
+    func updateTableView() {
+        if viewModel.isListEmpty() {
+            tableView.setEmptyView(title: "Empty List", message: "Couldn't load photos, try again later")
+        } else {
+            tableView.restore()
+        }
+        tableView.reloadData()
     }
 }
 
