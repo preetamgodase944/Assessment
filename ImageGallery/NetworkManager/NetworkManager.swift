@@ -60,13 +60,23 @@ private extension NetworkManager {
             completion(nil)
             return
         }
+        if let cachedImage = imageCache.object(forKey: urlString as NSString) {
+            completion(cachedImage)
+            return
+        }
+        
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil else { return }
+            guard let data = data, error == nil else {
+                completion(nil)
+                return
+            }
             if let image = UIImage(data: data) {
                 DispatchQueue.main.async {
                     cache.setObject(image, forKey: urlString as NSString)
                     completion(image)
                 }
+            } else {
+                completion(nil)
             }
         }
         task.resume()

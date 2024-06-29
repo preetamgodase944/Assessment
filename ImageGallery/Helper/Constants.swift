@@ -19,9 +19,10 @@ enum Constants {
         case Main
     }
     
-    enum ButtonImageName: String {
+    enum ImageName: String {
         case selected = "checkmark.square.fill"
         case unselected = "square"
+        case placeHolderImage = "photo"
     }
     
     enum TableViewEmptyState: String {

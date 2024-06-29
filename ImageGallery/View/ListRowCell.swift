@@ -31,7 +31,7 @@ class ListRowCell: UITableViewCell {
     
     override func prepareForReuse() {
         authorLabel.text = ""
-        imageContent.image = nil
+        imageContent.image = UIImage(systemName: Constants.ImageName.placeHolderImage.rawValue)
         descriptionLabel.text = nil
     }
     

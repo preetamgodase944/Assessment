@@ -11,8 +11,8 @@ class ListingVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var overlayView: UIView!
-    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     weak var dialogView: DialogView?
     
     var viewModel: ListingViewModel = ListingViewModel()
@@ -156,6 +156,13 @@ extension ListingVC: UITableViewDataSource {
         cell.tag = indexPath.row
         cell.configureCell(for: model, isEnabled: isRowEnabled, delegate: self)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            guard let (model, _) = viewModel.outputs.getPhotoModelWithState(for: indexPath.row) else { return }
+            NetworkManager.shared.getImage(for: model) { _ in }
+        }
     }
 }
 

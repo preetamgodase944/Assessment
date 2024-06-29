@@ -41,8 +41,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jrq-lC-8gL">
                                 <rect key="frame" x="0.0" y="28.333333333333336" width="256" height="96.333333333333314"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ksa-Eu-sOi">
-                                        <rect key="frame" x="0.0" y="0.0" width="256" height="96.333333333333329"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ksa-Eu-sOi">
+                                        <rect key="frame" x="0.0" y="1.6666666666666643" width="256" height="93.333333333333343"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="256" id="NnH-K3-Baq"/>
                                             <constraint firstAttribute="height" constant="96.329999999999998" id="PHM-MV-3ow"/>
@@ -91,6 +91,7 @@
     </objects>
     <resources>
         <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

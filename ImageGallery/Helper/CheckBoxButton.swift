@@ -10,7 +10,7 @@ import UIKit
 class CheckBoxButton: UIButton {
     
     func updateButtonState() {
-        let imageName: Constants.ButtonImageName = isSelected ? .selected : .unselected
+        let imageName: Constants.ImageName = isSelected ? .selected : .unselected
         setImage(UIImage(systemName: imageName.rawValue), for: .normal)
     }
 }
