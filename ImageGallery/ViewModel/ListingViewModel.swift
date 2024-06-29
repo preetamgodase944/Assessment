@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ListingIntputViewModel {
-    func fetchImages()
+    func fetchImages(isRefereshOperation: Bool)
     func updateState(forRow atIndex: Int, to newValue: Bool)
 }
 
@@ -31,14 +31,15 @@ class ListingViewModel: ListingViewModelType {
     
     var photosData: [PhotoModel]?
     var rowStateData: [String: Bool] = [:]
+    var currentPageNumber: Int = 1
     
     var reloadTableView: () -> Void = { }
     var hideLoadingIndicator: () -> Void = { }
 }
 
 extension ListingViewModel: ListingIntputViewModel {
-    func fetchImages() {
-        let pageNumber = getPageNumber()
+    func fetchImages(isRefereshOperation: Bool) {
+        let pageNumber = isRefereshOperation ? currentPageNumber : getPageNumber()
         NetworkManager.shared.fetchPhotoListData(for: pageNumber) { [weak self] photosModel in
             guard let self else { return }
             
@@ -53,6 +54,7 @@ extension ListingViewModel: ListingIntputViewModel {
             self.reloadTableView()
             self.hideLoadingIndicator()
         }
+        currentPageNumber = pageNumber
     }
     
     func updateState(forRow atIndex: Int, to newValue: Bool) {

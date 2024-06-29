@@ -29,7 +29,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GiF-7s-hjz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GiF-7s-hjz">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
@@ -38,6 +38,13 @@
                                     <outlet property="prefetchDataSource" destination="BYZ-38-t0r" id="xdF-D6-0uU"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HNf-HR-cpr">
+                                <rect key="frame" x="0.0" y="103" width="393" height="1"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="d5L-Yg-0fq"/>
+                                </constraints>
+                            </view>
                             <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0uL-S4-kFd">
                                 <rect key="frame" x="16" y="59" width="361" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -49,6 +56,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="HNf-HR-cpr" firstAttribute="top" secondItem="Pq1-nk-cAi" secondAttribute="bottom" id="0Gz-XL-d9U"/>
                             <constraint firstItem="EuG-fw-wUS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5KX-fD-qdW"/>
                             <constraint firstItem="0uL-S4-kFd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="6Px-D9-Qg0"/>
                             <constraint firstItem="GiF-7s-hjz" firstAttribute="top" secondItem="Pq1-nk-cAi" secondAttribute="bottom" id="DzF-Hh-L9m"/>
@@ -56,6 +64,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pq1-nk-cAi" secondAttribute="trailing" id="KLj-Gf-jl7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0uL-S4-kFd" secondAttribute="trailing" id="NMO-2l-CkH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GiF-7s-hjz" secondAttribute="trailing" id="OLe-Zq-Bb7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HNf-HR-cpr" secondAttribute="trailing" id="SRK-4R-SwM"/>
+                            <constraint firstItem="HNf-HR-cpr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TC8-94-SyZ"/>
                             <constraint firstItem="Pq1-nk-cAi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cbI-vh-r68"/>
                             <constraint firstItem="GiF-7s-hjz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fcq-89-Bqd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GiF-7s-hjz" secondAttribute="bottom" id="gYh-DS-HHQ"/>
@@ -77,6 +87,9 @@
     </scenes>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

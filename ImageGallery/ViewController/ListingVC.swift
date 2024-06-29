@@ -31,7 +31,7 @@ class ListingVC: UIViewController {
 
     @IBAction func refreshButtonTapped(_ sender: Any) {
         activityIndicator.startAnimating()
-        viewModel.inputs.fetchImages()
+        viewModel.inputs.fetchImages(isRefereshOperation: true)
     }
     
 }
@@ -40,7 +40,7 @@ private extension ListingVC {
     func setUpOnLoad() {
         configureUI()
         addTapGesture()
-        viewModel.inputs.fetchImages()
+        viewModel.inputs.fetchImages(isRefereshOperation: false)
         bindUI()
         registerTableViewCell()
     }
@@ -183,7 +183,7 @@ extension ListingVC: UITableViewDelegate {
         let distanceFromBottom = scrollView.contentSize.height - contentYOffset
 
         if distanceFromBottom < height {
-            viewModel.inputs.fetchImages()
+            viewModel.inputs.fetchImages(isRefereshOperation: false)
         }
     }
 }
